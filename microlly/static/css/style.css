@@ -1,0 +1,134 @@
+html{
+    background-color: #e5e5e5;
+}
+
+body {
+    background-color: #e5e5e5;
+    margin: auto;
+    width: 1000px;
+}
+
+.contenu{
+    background-color: #e5e5e5;
+    padding-bottom: 50px;
+}
+
+.banner{
+    width: 1000px;
+    height: 300px;
+    background-color: #0C4B33;
+    position: relative;
+}
+
+.banner h1{
+    position: absolute;
+    width: 500px;
+    height: 80px;
+    left: 250px;
+
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: normal;
+    font-size: 64px;
+    text-align: center;
+
+    color: #44B78B;
+}
+
+.banner h2 {
+    position: absolute;
+    width: 500px;
+    height: 65px;
+    left: 250px;
+    top: 80px;
+
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: normal;
+    font-size: 24px;
+    text-align: center;
+
+    margin-top: 30px;
+    color: #44B78B;
+}
+
+.banner nav {
+    position: absolute;
+    width: 1000px;
+    height: 100px;
+
+    margin-top: 200px;
+    margin-bottom: 0px;
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+    padding-right: 40px;
+}
+
+nav li{
+    list-style: none;
+}
+
+.nav-button{
+    width: 150px;
+    height: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid #44B78B ;
+    border-radius: 10px;
+    background-color: #C4C4C44a;
+
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: normal;
+    font-size: 24px;
+    text-align: center;
+
+    color: #E5E5E5;
+
+    text-shadow: 0px 2px 2px #44B78B;
+}
+
+.latest-post header{
+    background-color: #44B78B;
+    height: 70px;
+    position: relative;
+}
+
+.latest-post header>h2 {
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color : #ffffff;
+    background-color: #44B78B;
+    position: absolute;
+    margin-left: 40px;
+}
+.latest-post {
+    padding-top: 100px;
+    width: auto;
+}
+
+
+.latest-post article{
+    margin-left: 40px;
+}
+
+.latest-post hr {
+    margin-top: 20px;
+}
+
+.contenu>.footer{
+    width: 1000px;
+    height: 50px;
+    background-color: #0C4B33;
+    position: absolute;
+    color: #44B78B;
+    text-align: center 
+}
+
+
+.rounded-corners-banner{
+    border-radius: 0px 0px 20px 20px;
+}
+
+.rounded-corners-footer{
+    border-radius: 20px 20px 0px 0px;
+}

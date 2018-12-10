@@ -1,0 +1,22 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<section class="latest-post">
+    <header>
+        <h2>Latest post</h2>
+    </header>
+    {% if latests_posts %}
+    {% for post in latests_posts %}
+    <article>
+        <h3><a href="{% url 'microlly_blog:details' post.pk %}">{{ post.title }}</a></h3>
+        <p>Posted by <strong>{{post.author}}</strong> on {{post.release_date}}</p>
+        <p>{{ post.preview }}</p>
+        <a href="{% url 'microlly_blog:details' post.pk %}">Read more</a>
+    </article>
+    <hr>
+    {% endfor %}
+    {% else %}
+    <p>Aucunes publications.</p>
+    {% endif %}
+</section>
+{% endblock %}

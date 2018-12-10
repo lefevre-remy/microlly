@@ -1,0 +1,19 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+{% if list_posts_user %}
+{% for post in list_posts_user %}
+<article>
+    <h3>{{ post.title }}</h3>
+    <p>Posted by <strong>{{post.author}}</strong> on {{post.release_date}}</p>
+    <p>{{ post.preview }}</p>
+    <a href="{% url 'microlly_blog:details' post.pk %}">Read more</a>
+</article>
+<hr>
+{% endfor %}
+{% else %}
+<p>Aucunes publications.</p>
+{% endif %}
+
+{% endblock %}

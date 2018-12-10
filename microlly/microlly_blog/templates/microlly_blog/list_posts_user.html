@@ -1,0 +1,53 @@
+{% extends 'base_layout.html' %}
+
+{% block section-title %}
+Post by: {{author}}
+{% endblock %}
+
+{% block content %}
+<article class="row">
+    {% for post in list_posts_user %}
+    <div class="card-container col-md-6 col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a class="badge badge-lightgreen" href="{% url 'microlly_blog:details' post.slug post.pk %}">
+                        {{ post.title }}</a>
+                </h4>
+                <p class="card-text">
+                    {{post.preview}}
+                </p>
+            </div>
+            <div class="card-footer">
+                <p class="card-text">
+                    <small class="text-muted">
+                        Posted by: <a href="{% url 'microlly_blog:list_post_user' post.author %}">{{post.author}}</a>
+                        <span class="text-dark"></span>
+                        on {{post.release_date}}
+                    </small>
+                </p>
+                <p class="card-text">
+                    <small class="text-muted">
+                        Last update: {{post.edit_date}}
+                    </small>
+                </p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</article>
+
+<nav aria-label="Pagination author posts">
+    <ul class="pagination justify-content-center">
+        {% if list_posts_user.has_previous %}
+        <li class="page-item"> <a class="page-link text-lightgreen" href="?page=1">&laquo; first</a> </li>
+        <li class="page-item"><a class="page-link text-lightgreen" href="?page={{ list_posts_user.previous_page_number }}">previous</a></li>
+        {% endif %}
+        {% if list_posts_user.has_next %}
+        <li class="page-item"><a class="page-link text-lightgreen" href="?page={{ list_posts_user.next_page_number }}">next</a></li>
+        <li class="page-item"><a class="page-link text-lightgreen" href="?page={{ list_posts_user.paginator.num_pages }}">last &raquo;</a></li>
+        {% endif %}
+    </ul>
+</nav>
+
+{% endblock %}

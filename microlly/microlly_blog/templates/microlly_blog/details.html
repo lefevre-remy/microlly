@@ -1,0 +1,23 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<h1>details.html</h1>
+<h2>{{post.title}}</h2>
+<p>{{ post.body }}</p>
+<p>Created: {{ post.release_date }}</p>
+<p>Edited: {{ post.edit_date }}</p>
+
+<a href="{% url 'microlly_blog:edit' post.pk %}"> Editer le post</a>
+<!--{% if form %}-->
+<form class="" action="{% url 'microlly_blog:edit' post.pk %}" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Edition">
+</form>
+<!--{%else%}
+<form class="" action="{% url 'microlly_blog:edit' post.pk %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Edition">
+</form>
+{%endif%}-->
+{% endblock %}
